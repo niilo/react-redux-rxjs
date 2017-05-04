@@ -11,8 +11,8 @@ var config = {
   },
   resolve: {
     alias: {
-      react: 'preact-compat',
-      'react-dom': 'preact-compat'
+      react: 'preact',
+      'react-dom': 'preact'
     }
   },
   module: {
@@ -20,10 +20,7 @@ var config = {
       {
         test: /\.(js)$/,
         use: 'babel-loader',
-        include: [
-          path.resolve('src'),
-          path.resolve('node_modules/preact-compat/src')
-        ]
+        include: [path.resolve('src'), path.resolve('node_modules/preact/src')]
       },
       {
         test: /\.(css)$/,
