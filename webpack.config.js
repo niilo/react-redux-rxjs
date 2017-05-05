@@ -7,12 +7,13 @@ var config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
-    publicPath: '/'
+    publicPath: '/',
+    sourceMapFilename: '[name].map'
   },
   resolve: {
     alias: {
-      react: 'preact',
-      'react-dom': 'preact'
+      react: 'preact-compat',
+      'react-dom': 'preact-compat'
     }
   },
   module: {
@@ -20,7 +21,10 @@ var config = {
       {
         test: /\.(js)$/,
         use: 'babel-loader',
-        include: [path.resolve('src'), path.resolve('node_modules/preact/src')]
+        include: [
+          path.resolve('src'),
+          path.resolve('node_modules/preact-compat/src')
+        ]
       },
       {
         test: /\.(css)$/,
