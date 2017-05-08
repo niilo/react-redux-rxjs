@@ -1,14 +1,14 @@
 import {createStore, applyMiddleware} from 'redux'
-import app from './reducers/rootReducer'
+import rootReducer from './rootReducer'
 
 import {createEpicMiddleware} from 'redux-observable'
-import fetchUserEpic from './epic'
+import autoCompleteEpic from './github-search/githubSearchEpic'
 
-const epicMiddleware = createEpicMiddleware(fetchUserEpic)
+const epicMiddleware = createEpicMiddleware(autoCompleteEpic)
 
 export default function configureStore () {
   const store = createStore(
-    app,
+    rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ &&
       window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(epicMiddleware)

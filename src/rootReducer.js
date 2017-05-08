@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-import appData from './dataReducer'
+import githubSearchReducer from './github-search/githubSearchReducer'
 
 const rootReducer = combineReducers({
-  appData
+  githubSearchReducer
 })
 
 export default rootReducer
