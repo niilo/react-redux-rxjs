@@ -2,13 +2,13 @@ import React from 'react'
 
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {queryData} from './github-search/githubSearchActions'
+import {queryData} from '../githubSearchActions'
 
 const GithubSearchListItem = ({item}) => (
   <li>id: {item.id}, Login: {item.login}</li>
 )
 
-const GithubSearch = ({query}) => <input type='text' onChange={query} />
+const GithubSearchQuery = ({query}) => <input type='text' onChange={query} />
 
 const GithubSearchList = ({result}) => {
   if (result.isFetching) return <p>Loading</p>
@@ -26,10 +26,10 @@ const GithubSearchList = ({result}) => {
   )
 }
 
-const App = props => {
+const GithubSearch = props => {
   return (
     <div className='container'>
-      <GithubSearch query={props.queryData} />
+      <GithubSearchQuery query={props.queryData} />
       <GithubSearchList result={props.appData} />
     </div>
   )
@@ -47,4 +47,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(GithubSearch)
