@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`github search result list renders correctly 1`] = `
+<div
+  className="container"
+>
+  <input
+    onChange={undefined}
+    type="text"
+  />
+  <ul>
+    <li>
+      id: 
+      681559
+      , Login: 
+      niilo
+    </li>
+    <li>
+      id: 
+      4352669
+      , Login: 
+      Kargamborgh
+    </li>
+    <li>
+      id: 
+      4191136
+      , Login: 
+      Purrnuu
+    </li>
+  </ul>
+</div>
+`;

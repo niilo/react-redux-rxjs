@@ -26,7 +26,7 @@ const GithubSearchList = ({result}) => {
   )
 }
 
-const GithubSearch = props => {
+export const GithubSearch = props => {
   return (
     <div className='container'>
       <GithubSearchQuery query={props.queryData} />
